@@ -1,10 +1,11 @@
 ﻿using System.Security.Cryptography.Xml;
 using ApiControleFinanceiro.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace ApiControleFinanceiro.Context
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext : IdentityDbContext<ApplicationUser>
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) 
         { }
