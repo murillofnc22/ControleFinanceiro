@@ -3,11 +3,14 @@ using ApiControleFinanceiro.Entities;
 using ApiControleFinanceiro.Repositories;
 using ApiControleFinanceiro.Repositories.Interfaces;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ApiControleFinanceiro.Controllers
 {
     [Route("api/[controller]")]
+    [Authorize(AuthenticationSchemes = "Bearer")]
+    [ApiController]
     public class MeioDePagamentoController : ControllerBase
     {
         IMeioDePagamentoRepository _meioDePagamentoRepository;
